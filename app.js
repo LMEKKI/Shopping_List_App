@@ -1,16 +1,38 @@
-const container = document.querySelector('.container');
+const ul_container = document.querySelector('.ul_container');
+const btn = document.getElementById("addBtn")
+const form = document.getElementById("name")
+let li = 0;
+let text = 1;
 
-console.log(container);
+function addProduct() {
+    if (form.value !== "") {
 
-const btn = document.getElementById("addSl")
+        li = document.createElement('li');
+        text = document.createTextNode(form.value);
+       li.appendChild(text);
+       ul_container.appendChild(li);
+
+       document.querySelector('li').addEventListener('click', () => {
+        document.querySelector('li').toggleAttribute('line');
+      }); 
+
+}
+}
 
 
-btn.addEventListener('click' , function addList() {
-    const li = document.createElement('li');
-    const text = document.createTextNode("salut");
-    li.appendChild(text);
-    container.appendChild(li);
-    });
+
+btn.addEventListener('click', addProduct);
+
+
+
+
+
+
+
+
+    
+    
+
 
 
 
